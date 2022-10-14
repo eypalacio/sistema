@@ -1,0 +1,60 @@
+.contenedor {
+    top: 5%;
+    left: 4%;
+    right: 4%;
+    bottom: 5%;
+    overflow: hidden;
+    border: 1px solid rgba($color: #ffffff, $alpha: 0.4);
+}
+
+.busquedas {
+    background: rgb(245, 245, 245);
+}
+
+.busquedas-recientes {
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    // background: linear-gradient(5deg,#363636, #111111);
+    background: linear-gradient(105deg, #464646, #1d1d1d, #111111);
+}
+
+.fondo {
+    right: 0;
+    width: calc(100% - 72.75%);
+}
+
+.foot {
+    position: absolute;
+    bottom: 5px;
+    // left: 15px;
+    left: 0;
+    font-size: 68%;
+    color: #ffffff;
+}
+
+.bfi {
+    width: 35px;
+    // width: 2.5%;
+}
+
+.autor {
+    color: #004797;
+    font-weight: bolder;
+}
+
+.blob1 {
+    position: absolute;
+    width: 36em;
+    top: -18em;
+    left: 6em;
+    opacity: .5;
+}
+
+.blob2 {
+    position: absolute;
+    //width:5%;
+    //bottom: -62em;
+   // right: -33em;
+    opacity: .1;
+}

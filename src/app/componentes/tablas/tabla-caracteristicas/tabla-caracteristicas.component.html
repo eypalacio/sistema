@@ -1,0 +1,39 @@
+<div class="table-responsive cont-table">
+    <table class="table w-100">
+        <thead class="cabecera">
+            <tr>
+                <th style="width: 10%;">Sistema o Aplicación</th>
+                <th style="width: 6%;">SIGLAS</th>
+                <th style="width: 20%;">Descripción</th>
+                <th>Desarrolada por</th>
+                <th>Lenguaje Programacion</th>
+                <th>Soporte Técnico</th>
+                <th>Tipo</th>
+                <th>Servidor Aplicacion</th>
+                <th>Base de Datos</th>
+                <th>Servidor Base de Datos</th>
+                <th>Areas usuarias</th>
+                <th>Administrador</th>
+                <th>Editar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of caracteristicas | filter:filter">
+                <td>{{item.sistema}}</td>
+                <td>{{item.siglas}}</td>
+                <td>{{item.descripcion}}</td>
+                <td>{{item.desarrollador}}</td>
+                <td>{{item.lenguaje_programacion}}</td>
+                <td>{{item.soporte}}</td>
+                <td>{{item.tipo}}</td>
+                <!-- <td>{{item.url}}</td> -->
+                <td>{{item.servidor_aplicacion}}</td>
+                <td>{{item.base_datos + ' '+item.tipo_db}}</td>
+                <td>{{item.servidor_base_datos}}</td>
+                <td>{{item.areas_usuarias}}</td>
+                <td>{{item.administrador}}</td>
+                <td><i (click)="navigate(item)" class="bi bi-pencil-square d-flex justify-content-center"></i></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

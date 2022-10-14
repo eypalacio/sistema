@@ -1,0 +1,88 @@
+<div class="container-fluid pt-4 px-5">
+    <div class="row">
+        <div class="col-sm-12">
+            <form action="/caracteristicas-sistemas" method="get"
+                class="p-4 border border-muted shadow-lg rounded d-flex flex-row flex-wrap datos-sistema position-relative">
+                <div class="input-content mt-4 rounded border border-muted shadow-sm position-relative">
+                    <label for="nombre" class="text-muted position-absolute small in-text">Nombre del Sistema:</label>
+                    <input type="text" id="nombre" placeholder="Nombre del Sistema" name="nombre" class="in small"
+                    [(ngModel)]="datos.sistema">
+                </div>
+                <div class="input-content mt-4 rounded border border-muted shadow-sm position-relative" style="width: 15%;">
+                    <label for="siglas" class="text-muted position-absolute small in-text">SIGLAS:</label>
+                    <input type="text" class="in small" id="siglas" placeholder="Siglas" name="siglas" [(ngModel)]="datos.siglas">
+                </div>
+                <div class="input-content mt-4 rounded border border-muted position-relative" style="width: 18%;">
+                    <label for="tipo" class="text-muted position-absolute small in-text">Tipo de Aplicacion:</label>
+                    <select class="in small" id="tipo" name="tipo" [(ngModel)]="datos.tipo">
+                        <option value="Web">Web</option>
+                        <option value="Desktop">Desktop</option>
+                    </select>
+                </div>
+                <div class="input-content mt-4 rounded border border-muted shadow-sm position-relative">
+                    <label for="desarrollador" class="text-muted position-absolute small in-text">Empresa Desarrolladora:</label>
+                    <input type="text" class="in small" id="desarrollador" placeholder="Empresa, entidad o desarrollador" 
+                    name="desarrollador" [(ngModel)]="datos.desarrollador">
+                </div>
+                <div class="input-content mt-4 rounded border border-muted shadow-sm position-relative" style="width: 25%;">
+                    <label for="lenguaje" class="text-muted position-absolute small in-text">Lenguaje de Programacion:</label>
+                    <input type="text" class="in small" id="lenguaje" placeholder="Lenguaje de Programacion" 
+                    name="lenguaje" [(ngModel)]="datos.lenguaje_programacion">
+                </div>
+                <div class="input-content mt-4 rounded border border-muted shadow-sm  position-relative">
+                    <label for="soporte" class="text-muted position-absolute small in-text">Soporte:</label>
+                    <input type="text" class="in small" id="soporte" placeholder="Soporte Tecnico" name="soporte"
+                    [(ngModel)]="datos.soporte">
+                </div>
+                <div class="input-content mt-4 rounded border border-muted shadow-sm position-relative" style="width: 20%;">
+                    <label for="server-app" class="text-muted position-absolute small in-text">Servidor APP:</label>
+                    <input type="text" class="in small" id="server-app" placeholder="ip-nombre y sistema operativo"
+                     name="server-app" [(ngModel)]="datos.servidor_aplicacion">
+                </div>
+                <div class="d-flex flex-row input-content mt-4 rounded border border-muted shadow-sm position-relative" style="width: 20%;">
+                    <label for="data" class="text-muted position-absolute small in-text">Base de Datos:</label>
+                    <input type="text" class="in small" id="data" placeholder="Nombre de la Base de Datos" 
+                    name="data" [(ngModel)]="datos.base_datos">
+                    <select name="base" id="base" class="in small" [(ngModel)]="datos.tipo_db">
+                        <option value="Oracle">Oracle</option>
+                        <option value="SQL Server">SQL Server</option>
+                        <option value="MySQL">MySQL</option>
+                        <option value="PostgreSQL">PostgreSQL</option>
+                        <option value="SQLite">SQLite</option>
+                        <option value="Access">Access</option>
+                    </select>
+                </div>
+                <div class="input-content mt-4 rounded border border-muted shadow-sm  position-relative" style="width: 20%;">
+                    <label for="" class="text-muted position-absolute small in-text">Servidor Base de Datos:</label>
+                    <input type="text" class="in small" id="server-data" placeholder="ip-nombre y sistema operativo" 
+                    name="server-data" [(ngModel)]="datos.servidor_base_datos">
+                </div>                
+                <div class="input-content mt-4 rounded border border-muted shadow-sm  position-relative">
+                    <label for="administrador" class="text-muted position-absolute small in-text">Administrador:</label>
+                    <input type="text" class="in small" id="administrador" placeholder="Persona encargada de administrar el servidor"
+                    name="administrador" [(ngModel)]="datos.administrador">
+                </div>
+                <div class="input-content mt-4 rounded border border-muted shadow-sm  position-relative">
+                    <label for="url" class="text-muted position-absolute small in-text">URL:</label>
+                    <input type="text" class="in small" id="url" placeholder="https://url-sistema.com" name="url"
+                    [(ngModel)]="datos.url">
+                </div>                 
+                <div class="input-content mt-4 rounded border border-muted shadow-sm  position-relative">
+                    <label for="areas_usuarias" class="text-muted position-absolute small in-text">Areas usuarias:</label>
+                    <input type="text" class="in small" id="areas_usuarias" placeholder="Gerencia de explotacion" name="areas_usuarias"
+                    [(ngModel)]="datos.areas_usuarias">
+                </div>                
+                <div class="input-content mt-4 rounded border border-muted shadow-sm  position-relative w-100">
+                    <label for="descripcion" class="text-muted position-absolute small in-text">Descripcion del sistema:</label>
+                    <textarea type="text" class="in small" id="descripcion" placeholder="Descripcion del sistema"  style="height: 100px;"
+                    name="descripcion" [(ngModel)]="datos.descripcion"></textarea>
+                </div>
+
+                <div class="botones position-relative mt-2 d-flex flex-row-reverse w-100">
+                    <button class="btn btn-cancelar mt-1" routerLink="/caracteristicas-sistemas">Cancelar</button>
+                    <button class="btn btn-aceptar mt-1" (click)="aceptar()">Aceptar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

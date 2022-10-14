@@ -1,0 +1,49 @@
+// @import './../../styles.scss';
+
+.input-content label, option, select{
+    left: 5px;
+    top: -20px;
+    font-size: 80%;
+  }
+  .input-content{
+    margin-inline: 5px;
+  }
+  
+  .in{
+    border: none;
+    width: 95%;
+    padding: 5px;
+
+  }
+  
+//   option{
+//     background: red;
+//   }
+  
+  .in::placeholder{
+    font-size: small;
+    text-overflow: ellipsis;
+  }
+
+  .botones{
+    // margin-left: 43em;
+  }
+
+  .btn-aceptar{
+    color: white;
+    background: var(--global);
+    &:hover{
+      background: var(--global-hover);
+    }
+  }
+
+  .btn-cancelar{
+    margin-left: 5px;
+    color: rgb(33, 32, 32);
+    border: solid 1px var(--global);
+    &:hover{
+      color: white;
+      border: solid 1px var(--global-hover);
+      background: var(--global-hover);
+    }
+  }

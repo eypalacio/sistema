@@ -18,6 +18,8 @@ $color: rgb(13, 0, 255);
     --global: #0952b3;
     --actual-day: #0961d3;
     --global-hover: #024194;
+    --cancel: rgb(194, 8, 8); 
+    --cancel-hover: rgb(153, 9, 9);
 }
 
 /* global styles*/
@@ -31,7 +33,7 @@ $color: rgb(13, 0, 255);
     -webkit-appearance: none;
 
     &:vertical {
-        width: 8px;
+        width: 2px;
     }
 
     &:horizontal {
@@ -65,7 +67,7 @@ $color: rgb(13, 0, 255);
     font-size: 77%;
 }
 .table-responsive{
-    height: 380px;
+    height: 550px;
     overflow: scroll;
 }
 thead{

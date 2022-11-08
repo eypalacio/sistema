@@ -19,6 +19,7 @@ import { TablaUsuarioComponent } from './componentes/tablas/tabla-usuario/tabla-
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './pages/login/login.component';
 import { FilterPipe } from './componentes/pipes/filter.pipe';
+import { FilterUserPipe } from './pipes/filter-user.pipe';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { FilterPipe } from './componentes/pipes/filter.pipe';
     FormularioSistemaComponent,
     DashboardComponent,
     FilterPipe,
+    FilterUserPipe,
   ],
   imports: [
     BrowserModule,

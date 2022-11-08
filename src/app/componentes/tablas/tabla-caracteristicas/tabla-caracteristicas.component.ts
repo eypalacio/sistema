@@ -11,8 +11,8 @@ import { ApiService } from 'src/app/service/api.service';
 })
 export class TablaCaracteristicasComponent implements OnInit {
 
-  filter: any
-  caracteristicas: Caracteristicas[] = []
+  filter: any;
+  caracteristicas: Caracteristicas[] = [];
 
   constructor(private storage: SessionStorageService, private router: Router, private api: ApiService) { }
 

@@ -39,11 +39,12 @@
 
   .btn-cancelar{
     margin-left: 5px;
-    color: rgb(33, 32, 32);
-    border: solid 1px var(--global);
+    color: white;
+    border: solid 1px var(--cancel);
+    background: var(--cancel);
     &:hover{
       color: white;
-      border: solid 1px var(--global-hover);
-      background: var(--global-hover);
+      border: solid 1px var(--cancel-hover);
+      background: var(--cancel-hover);
     }
   }

@@ -2,16 +2,24 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Caracteristicas } from '../models/caracteristicas.model';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { Usuarios } from '../models/usuarios.model';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  url: string = 'http://localhost:9608/apis/'
+  url: string = environment.url;
 
   constructor(private http: HttpClient) { }
 
+  /**
+ * carga los datos de los sistema desde bd
+ * @param no
+ * @returns 
+ */
   get_caracteristicas(): Observable<Caracteristicas[]> {
     let dir = this.url + 'sistema';
     return this.http.get<Caracteristicas[]>(dir)
@@ -28,14 +36,24 @@ export class ApiService {
     return this.http.put(dir, formData);
   }
 
-    /**
-   * Agrega un nuevo sistema a la bd
-   * @param formData datos del sistema
-   * @returns 
-   */
-     add_caracteristicas(formData: FormData) {
-      let dir = this.url + 'sistema';
-      return this.http.post(dir, formData);
-    }
+  /**
+ * Agrega un nuevo sistema a la bd
+ * @param formData datos del sistema
+ * @returns 
+ */
+  add_caracteristicas(formData: FormData) {
+    let dir = this.url + 'sistema';
+    return this.http.post(dir, formData);
+  }
+
+  /**
+* carga los datos de los usuarios desde bd.
+* @param no
+* @returns usuarios DB
+*/
+get_usuarios_datos(): Observable<Usuarios[]>{
+  let dir = this.url+'usuarios';
+  return this.http.get<Usuarios[]>(dir);
+}
 
 }

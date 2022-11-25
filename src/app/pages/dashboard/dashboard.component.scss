@@ -9,11 +9,31 @@
     background: rgb(245, 245, 245);
     transition: 1200ms cubic-bezier(.8, -0.6, 0.2, 1.5);
 
+    .form-content{
+        visibility: visible;
+        transform: scale(1);
+        transition: 1200ms cubic-bezier(.8, -0.6, 0.2, 1.5);
+    }
+
     &.login {
         left: 4%;
         right: 4%;
         border-radius: 0.5em;
         transition: 1200ms cubic-bezier(.8, -0.6, 0.2, 1.5);
+
+        .form-content{
+            position: absolute;
+            visibility: hidden;
+            transform: scale(0);
+            transition: 1200ms cubic-bezier(.8, -0.6, 0.2, 1.5);
+        }
+
+        .foot{
+            left: auto;
+            right: 20px;
+            z-index: 999;
+            transition: 1200ms cubic-bezier(.8, -0.6, 0.2, 1.5);
+        }
 
         .busquedas {
             opacity: 1;
@@ -39,20 +59,21 @@
 }
 
 .busquedas {
+    position: absolute;
     opacity: 0;
     transform: scale(0);
     transition: 500ms cubic-bezier(.8, -0.6, 0.2, 1.5);
 }
 
 .busquedas-recientes {
-    width: 50%;
+    width: 58%;
     height: 150%;
     transform: rotate(40deg);
     border-radius: 5em;
     overflow: hidden;
     justify-content: center;
     align-items: center;
-    right: -10%;
+    right: -15%;
     top: -20%;
     bottom: 0;
     // z-index: 999;
@@ -76,10 +97,10 @@
     position: absolute;
     bottom: 5px;
     width: fit-content;
-    // left: 15px;
-    left: 0;
+    left: 10%;
     font-size: 68%;
     color: #ffffff;
+    transition: 1200ms cubic-bezier(.8, -0.6, 0.2, 1.5);
 }
 
 .bfi {

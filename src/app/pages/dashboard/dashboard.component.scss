@@ -1,22 +1,70 @@
 .contenedor {
     top: 5%;
-    left: 4%;
-    right: 4%;
+    left: 10%;
+    right: 10%;
     bottom: 5%;
     overflow: hidden;
+    border-radius: 1.5em;
     border: 1px solid rgba($color: #ffffff, $alpha: 0.4);
+    background: rgb(245, 245, 245);
+    transition: 1200ms cubic-bezier(.8, -0.6, 0.2, 1.5);
+
+    &.login {
+        left: 4%;
+        right: 4%;
+        border-radius: 0.5em;
+        transition: 1200ms cubic-bezier(.8, -0.6, 0.2, 1.5);
+
+        .busquedas {
+            opacity: 1;
+            transform: scale(1);
+            transition: 1200ms cubic-bezier(.8, -0.6, 0.2, 1.5);
+        }
+
+        .busquedas-recientes {
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 22%;
+            transform: rotate(0);
+            border-radius: 0;
+            transition: 500ms cubic-bezier(.8, -0.6, 0.2, 1.5);
+
+            .side-bar {
+                opacity: 1;
+                transition: 1200ms cubic-bezier(.8, -0.6, 0.2, 1.5);
+            }
+        }
+    }
 }
 
 .busquedas {
-    background: rgb(245, 245, 245);
+    opacity: 0;
+    transform: scale(0);
+    transition: 500ms cubic-bezier(.8, -0.6, 0.2, 1.5);
 }
 
 .busquedas-recientes {
+    width: 50%;
+    height: 150%;
+    transform: rotate(40deg);
+    border-radius: 5em;
     overflow: hidden;
     justify-content: center;
     align-items: center;
+    right: -10%;
+    top: -20%;
+    bottom: 0;
+    // z-index: 999;
     // background: linear-gradient(5deg,#363636, #111111);
+    transition: 500ms cubic-bezier(.8, -0.6, 0.2, 1.5);
     background: linear-gradient(105deg, #464646, #1d1d1d, #111111);
+    box-shadow: 50px 0 40px 0 #1d1d1d;
+
+    .side-bar {
+        opacity: 0;
+        transition: 1200ms cubic-bezier(.8, -0.6, 0.2, 1.5);
+    }
 }
 
 .fondo {
@@ -27,6 +75,7 @@
 .foot {
     position: absolute;
     bottom: 5px;
+    width: fit-content;
     // left: 15px;
     left: 0;
     font-size: 68%;
@@ -55,6 +104,6 @@
     position: absolute;
     //width:5%;
     //bottom: -62em;
-   // right: -33em;
+    // right: -33em;
     opacity: .1;
 }

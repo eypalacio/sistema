@@ -1,9 +1,10 @@
 export interface Usuarios {
     id:any,
-    nombre_sistema: string,
+    sistema: string,
     siglas: any,
-    nombre_usuario: string,
+    nombre: string,
     usuario: string,
     area:any,
-    activo: any
+    activo: any,
+    rol:any,
 }

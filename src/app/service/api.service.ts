@@ -4,6 +4,7 @@ import { Caracteristicas } from '../models/caracteristicas.model';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Usuarios } from '../models/usuarios.model';
+import { SessionStorageService } from 'ngx-webstorage';
 
 
 @Injectable({
@@ -13,7 +14,29 @@ export class ApiService {
 
   url: string = environment.url;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private storage: SessionStorageService) { }
+
+  /**
+* login
+* @param formData
+* @returns 
+*/
+  login(formData: FormData):Observable<any> {
+    let dir = this.url + 'login'
+    return this.http.post(dir, formData);
+  }
+
+  /**
+* login
+* @param formData con id usuario
+* @param token
+* @returns 
+*/
+  logout(formData: FormData) {
+    formData.append('token', this.storage.retrieve('usuario').token);
+    let dir = this.url + 'logout'
+    return this.http.post(dir, formData);
+  }
 
   /**
  * carga los datos de los sistema desde bd
@@ -51,9 +74,11 @@ export class ApiService {
 * @param no
 * @returns usuarios DB
 */
-get_usuarios_datos(): Observable<Usuarios[]>{
-  let dir = this.url+'usuarios';
-  return this.http.get<Usuarios[]>(dir);
-}
+  get_usuarios_datos(): Observable<Usuarios[]> {
+    let dir = this.url + 'usuarios';
+    return this.http.get<Usuarios[]>(dir);
+  }
+
+
 
 }

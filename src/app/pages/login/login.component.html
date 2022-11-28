@@ -1,14 +1,15 @@
 <form action="" class="form-login">
-    <h1 class="h1">Aqui va el nombre de la Aplicacion</h1>
+    <h1 class="h1">Control de Aplicaciones y Usuarios BFI</h1>
     <div class="input-content user">
         <!-- <label for="usuario">usuario</label> -->
-        <input type="text" class="input small" id="usuario" placeholder="Usuario" name="usuario">
+        <input type="text" class="input small" id="usuario" placeholder="Usuario" name="usuario" [(ngModel)]="password">
         <i class="bi bi-person-circle prev"></i>
     </div>  
     <div class="input-content password">
         <!-- <label for="password">contraseña</label> -->
-        <input type="password" class="input small" id="password" placeholder="Contraseña" name="password">
+        <input type="password" class="input small" id="password" placeholder="Contraseña" name="password" [(ngModel)]="usuario">
         <i class="bi bi-eye-slash-fill prev"></i>
     </div> 
-    <button class="btn-login" (click)="click()">Aceptar</button>       
+    <button class="btn-login" (click)="login()">Aceptar</button>   
+    <div class="error" *ngIf="error.length > 0">{{error}}</div>    
 </form>

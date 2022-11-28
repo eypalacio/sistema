@@ -6,20 +6,29 @@
                 <th>SIGLAS</th>
                 <th>Nombre del usuario</th>
                 <th>Usuario</th>
+                <th>Rol</th>
                 <th>Àrea</th>
                 <th>Activo</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let item of usuarios | filter:filter">
-                <td>{{item.nombre_sistema}}</td>
+                <td>{{item.sistema}}</td>
                 <td>{{item.siglas}}</td>
-                <td>{{item.nombre_usuario}}</td>
+                <td>{{item.nombre}}</td>
                 <td>{{item.usuario}}</td>
+                <td>{{item.rol}}</td>
                 <td>{{item.area}}</td>
                 <td>{{item.activo}}</td>
             </tr>
         </tbody>
     </table>
+</div>
+<div class="action-panel py-1 d-flex flex-row flex-wrap position-relative">
+    <button
+        class="btn d-flex justify-content-center align-item-center active position-relative"
+        routerLink="/usuarios-sistemas" id="btn-usuarios">Total de usuarios registrados: {{cantidad}}
+        <div class="btn-border-bottom position-absolute"></div>
+    </button>
 </div>
 

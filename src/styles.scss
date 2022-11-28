@@ -90,3 +90,15 @@ thead{
 .bi {
     cursor: pointer;
 }
+
+.btn {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    color: var(--global);
+    font-weight: bolder;
+    font-size: 14px;
+}

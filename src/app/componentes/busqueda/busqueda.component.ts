@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { Usuarios } from 'src/app/models/usuarios.model';
 import { SessionStorageService } from 'ngx-webstorage';
+import { ApiService } from 'src/app/service/api.service';
 
 @Component({
   selector: 'app-busqueda',
@@ -16,7 +17,7 @@ export class BusquedaComponent implements OnInit {
   url: string = '';
   add: boolean = false;
 
-  constructor(private router: Router, private storage: SessionStorageService) { }
+  constructor(private router: Router, private storage: SessionStorageService, private api: ApiService) { }
 
   ngOnInit(): void {
     this.router.events.subscribe(e => {
@@ -51,4 +52,10 @@ export class BusquedaComponent implements OnInit {
   filter(){
     this.storage.store('filter',this.inputValue)
   }
+
+  logout(){
+    // const formData = new FormData().append('id', )
+  }
+
+
 }

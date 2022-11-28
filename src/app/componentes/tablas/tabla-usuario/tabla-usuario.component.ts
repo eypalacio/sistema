@@ -12,6 +12,7 @@ export class TablaUsuarioComponent implements OnInit {
 
   filter: any;
   usuarios: Usuarios[] = [];
+  cantidad: number = 0;
 
   constructor(private api: ApiService, private storage: SessionStorageService) { }
 
@@ -32,6 +33,7 @@ export class TablaUsuarioComponent implements OnInit {
   get_datos() {
     this.api.get_usuarios_datos().subscribe(result => {
       this.usuarios = result;
+      this.cantidad = result.length
     })
   }
 

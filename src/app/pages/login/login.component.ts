@@ -17,9 +17,7 @@ export class LoginComponent implements OnInit {
   constructor(private api: ApiService, private storage: SessionStorageService) { }
 
   ngOnInit(): void {
-    setInterval(()=>{
-      this.error = ''
-    },4500)
+
   }
 
   login() {
@@ -41,12 +39,10 @@ export class LoginComponent implements OnInit {
       document.getElementById('content')?.classList.toggle('login')
     }, error =>{
       this.error = 'usuario o contraseña incorrectos'
+      setTimeout(() => {
+        this.error = '';
+      }, 4500);
     });
   }
-
-  click() {
-    document.getElementById('content')?.classList.toggle('login')
-  }
-
 
 }

@@ -54,8 +54,14 @@ export class BusquedaComponent implements OnInit {
   }
 
   logout(){
-    // const formData = new FormData().append('id', )
-  }
+    const id = this.storage.retrieve('usuario').usuario.id;
+    const formData = new FormData();
+    formData.append('id', id);
 
+    this.api.logout(formData).subscribe(result =>{
+      this.storage.clear('usuario');
+      document.getElementById('content')?.classList.toggle('login');
+    })
+  }
 
 }

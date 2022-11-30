@@ -23,7 +23,7 @@ export class BusquedaComponent implements OnInit {
     this.router.events.subscribe(e => {
       if (e instanceof NavigationEnd) {
         console.log(e);
-        
+
         console.log(e.url);
         // console.log('btn-'+e.url.split('-')[0].slice(1));
         this.activo = e.url === '/' || e.url == '/caracteristicas-sistemas' || e.url == '/usuarios-sistemas'
@@ -49,16 +49,21 @@ export class BusquedaComponent implements OnInit {
     this.router.navigate([event.id == 'btn-usuarios' ? 'usuarios-sistemas' : 'caracteristicas-sistemas'])
   }
 
-  filter(){
-    this.storage.store('filter',this.inputValue)
+  filter() {
+    this.storage.store('filter', this.inputValue)
   }
 
-  logout(){
+  logout() {
     const id = this.storage.retrieve('usuario').usuario.id;
+    // const token = this.storage.retrieve('token').usuario.token;
+
     const formData = new FormData();
     formData.append('id', id);
-
-    this.api.logout(formData).subscribe(result =>{
+    // formData.append('token', token)
+    
+    this.api.logout(formData).subscribe(result => {
+      console.log(result);
+      
       this.storage.clear('usuario');
       document.getElementById('content')?.classList.toggle('login');
     })

@@ -22,26 +22,27 @@ export class LoginComponent implements OnInit {
 
   login() {
     const formData = new FormData();
-
-    formData.append('user', this.usuario);
+    formData.append('usuario', this.usuario);
     formData.append('password', this.password);
 
     this.api.login(formData).subscribe(result => {
-      const user = {
-        id: result.usuario[0].id,
-        usuario: result.usuario[0].usuario,
-        nombre: result.usuario[0].nombre,
-        fecha: result.usuario[0].fecha,
-        rol: result.usuario[0].rol,
-        token: result.token,
+      const usuario = {
+        id: result.usuario.id,
+        usuario: result.usuario.usuario,
+        nombre: result.usuario.nombre,
+        fecha: result.usuario.fecha,
+        rol: result.usuario.rol,
+        token: result.token,        
       }
-      this.storage.store('usuario', user);
+      console.log(usuario);
+      
+      this.storage.store('usuario', usuario);
       document.getElementById('content')?.classList.toggle('login')
     }, error =>{
       this.error = 'usuario o contraseña incorrectos'
       setTimeout(() => {
         this.error = '';
-      }, 4500);
+      }, 45);
     });
   }
 

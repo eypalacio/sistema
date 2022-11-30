@@ -32,7 +32,7 @@ export class ApiService {
 * @param token
 * @returns 
 */
-  logout(formData: FormData):Observable<any> {
+  logout(formData: FormData) {
     formData.append('token', this.storage.retrieve('usuario').token);
     let dir = this.url + 'logout'
     return this.http.post(dir, formData);

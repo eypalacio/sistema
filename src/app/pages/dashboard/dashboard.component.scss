@@ -128,3 +128,33 @@
     // right: -33em;
     opacity: .1;
 }
+
+////////////////**************
+
+.svg-blobs {
+    position: relative;
+    width: 25em;
+    margin-top: -5em;
+    margin-left: -15em;
+    transform: rotate(-13deg);
+}
+
+.blob {
+    position: absolute;
+    // bottom: 300px;
+    top: -32em;
+    left: -40em;
+    width: 85em;
+    transform: rotate(-4deg); //-4deg
+    opacity: .7;
+}
+
+.blobs {
+    position: absolute;
+    top: -29em;
+    left: -35em;
+    width: 75em;
+    transform: rotate(-6deg); //-4deg
+    opacity: .8;
+    color: #797979;
+}
